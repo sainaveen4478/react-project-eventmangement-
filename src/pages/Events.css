@@ -1,0 +1,29 @@
+.events-container {
+  padding: 40px;
+}
+
+.events-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.event-card {
+  min-width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.event-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.event-card button {
+  margin-top: 10px;
+  width: 100%;
+}

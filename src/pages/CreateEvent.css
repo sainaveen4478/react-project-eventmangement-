@@ -1,0 +1,44 @@
+.create-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6fb;
+}
+
+.create-form {
+  background: white;
+  padding: 40px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.create-form h1 {
+  margin-bottom: 20px;
+}
+
+.create-form input,
+.create-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.create-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.create-form button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
