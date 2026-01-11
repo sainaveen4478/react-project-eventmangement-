@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { events } from "../data/events";
 import "./EventDetails.css";
 
 export default function EventDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const event = events.find(e => e.id === Number(id));
 
   const [name, setName] = useState("");
@@ -20,9 +22,8 @@ export default function EventDetails() {
       return;
     }
 
-    // ✅ Email validation
     if (!email.includes("@")) {
-      alert("Enter a valid email address");
+      alert("Enter a valid email");
       return;
     }
 
@@ -32,37 +33,42 @@ export default function EventDetails() {
       id: Date.now(),
       eventId: event.id,
       title: event.title,
-      date: event.date,        // ✅ STORE EVENT DATE
-      time: event.time,        // ✅ STORE TIME (optional)
-      venue: event.venue,      // ✅ STORE VENUE
+      date: event.date,
+      time: event.time,
+      venue: event.venue,
+      location: event.location,
+      price: event.price,
+      image: event.image,   
+      tickets: Number(tickets),
       name,
-      email,
-      tickets: Number(tickets)
+      email
     });
 
     localStorage.setItem("bookings", JSON.stringify(bookings));
+
     setSuccess(true);
+
+  
+    setTimeout(() => navigate("/view-tickets"), 1000);
   };
 
   return (
     <div className="event-details-page">
 
-      {/* LEFT BANNER */}
+   
       <div className="event-banner">
         <img src={event.image} alt={event.title} />
-
         <div className="banner-text">
           <h1>{event.title}</h1>
           <p>{event.description}</p>
         </div>
       </div>
 
-      {/* RIGHT BOOKING */}
+   
       <div className="event-booking">
         <div className="booking-box">
           <h3>Event Details</h3>
 
-          {/* ✅ DYNAMIC EVENT INFO */}
           <p><strong>Date:</strong> {new Date(event.date).toDateString()}</p>
           <p><strong>Time:</strong> {event.time}</p>
           <p><strong>Venue:</strong> {event.venue}</p>
@@ -79,24 +85,26 @@ export default function EventDetails() {
                 value={name}
                 onChange={e => setName(e.target.value)}
               />
+
               <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
+
               <input
                 type="number"
                 min="1"
                 value={tickets}
                 onChange={e => setTickets(e.target.value)}
               />
+
               <button onClick={handleBooking}>Book Now</button>
             </>
           )}
         </div>
       </div>
-
     </div>
   );
 }

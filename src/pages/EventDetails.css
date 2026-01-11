@@ -5,7 +5,7 @@
   background: #f5f5f5;
 }
 
-/* LEFT SIDE */
+
 .event-banner {
   flex: 7;
   position: relative;
@@ -20,7 +20,7 @@
   object-fit: cover;
 }
 
-/* TEXT ON IMAGE (NO BLACK SHADE) */
+
 .banner-text {
   position: absolute;
   bottom: 25px;
@@ -40,7 +40,7 @@
   opacity: 0.9;
 }
 
-/* RIGHT SIDE */
+
 .event-booking {
   flex: 3;
 }
@@ -92,7 +92,7 @@
   text-align: center;
 }
 
-/* ANIMATION */
+
 @keyframes fadeUp {
   from {
     opacity: 0;

@@ -6,7 +6,7 @@ export default function ViewTickets() {
 
   if (!ticket) return <h2 className="no-ticket">No ticket found</h2>;
 
-  const price = Number(ticket.price || 200);   // fallback price
+  const price = Number(ticket.price || 200);   
   const qty = Number(ticket.tickets || 1);
   const fee = 18.88;
   const total = price * qty + fee;
@@ -15,12 +15,13 @@ export default function ViewTickets() {
     <div className="ticket-wrapper">
       <div className="bms-ticket">
 
-        {/* IMAGE */}
+     
         <div className="ticket-img">
-          <img
-  src={ticket.image || "/images/default-event.jpg"}
+    <img
+  src={ticket.image || "/images"}
   alt={ticket.title}
 />
+
 
         </div>
 
@@ -51,7 +52,7 @@ export default function ViewTickets() {
           </div>
         </div>
 
-        {/* STATUS */}
+       
         <div className="ticket-status">
           <span className="pickup">Pick Up</span>
           <div className="stamp">CONFIRMED</div>

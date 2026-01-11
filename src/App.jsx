@@ -21,7 +21,6 @@ export default function App() {
         <Route path="/create" element={<CreateEvent />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
-        {/* Tickets */}
         <Route path="/tickets" element={<ViewTickets />} />
         <Route path="/view-tickets" element={<ViewTickets />} />
       </Routes>
