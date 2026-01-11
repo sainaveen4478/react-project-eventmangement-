@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
+
+
 export default function Navbar() {
   return (
     <nav className="navbar">
@@ -13,6 +15,10 @@ export default function Navbar() {
           </li>
           <li>
             <NavLink to="/events">Events</NavLink>
+          </li>
+          <li>
+            <NavLink to="/tickets">View Tickets</NavLink>
+
           </li>
           <li>
             <NavLink to="/create">Create Event</NavLink>
