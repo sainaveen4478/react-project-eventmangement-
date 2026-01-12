@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 export default function Home() {
+  const isLoggedIn = localStorage.getItem("loggedIn");
+
   return (
     <div className="home-page">
       <div className="overlay">
@@ -15,10 +17,14 @@ export default function Home() {
             seamlessly with a professional user experience.
           </p>
 
-          <div className="actions">
-            <Link to="/events" className="btn primary">View Events</Link>
-            <Link to="/create" className="btn secondary">Create Event</Link>
-          </div>
+          {!isLoggedIn ? (
+            <div className="home-buttons">
+              <Link to="/login" className="btn">Login</Link>
+              <Link to="/register" className="btn secondary">Register</Link>
+            </div>
+          ) : (
+            <Link to="/events" className="btn">View Events</Link>
+          )}
         </div>
       </div>
     </div>

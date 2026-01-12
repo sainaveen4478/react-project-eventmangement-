@@ -1,64 +1,39 @@
 import "./ViewTickets.css";
 
 export default function ViewTickets() {
+  const currentUser = localStorage.getItem("currentUser");
   const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-  const ticket = bookings.length ? bookings[bookings.length - 1] : null;
 
-  if (!ticket) return <h2 className="no-ticket">No ticket found</h2>;
+  const userTickets = bookings.filter(
+    b => b.userEmail === currentUser
+  );
 
-  const price = Number(ticket.price || 200);   
-  const qty = Number(ticket.tickets || 1);
+  if (!userTickets.length) {
+    return <h2 className="no-ticket">No ticket found</h2>;
+  }
+
+  const ticket = userTickets[userTickets.length - 1];
+
   const fee = 18.88;
-  const total = price * qty + fee;
+  const total = ticket.price * ticket.tickets + fee;
 
   return (
     <div className="ticket-wrapper">
       <div className="bms-ticket">
-
-     
         <div className="ticket-img">
-    <img
-  src={ticket.image || "/images"}
-  alt={ticket.title}
-/>
-
-
+          <img src={ticket.image} alt={ticket.title} />
         </div>
 
-        {/* INFO */}
         <div className="ticket-info">
           <h2>{ticket.title}</h2>
-          <span className="format">2D</span>
+          <p>{ticket.date} | {ticket.time}</p>
+          <p>{ticket.venue}</p>
+          <p>Qty: {ticket.tickets}</p>
 
-          <p className="datetime">{ticket.date} | {ticket.time}</p>
-          <p className="venue">{ticket.venue || "Phoenix Marketcity Arena"}</p>
-          <p className="qty">Quantity: {qty}</p>
-
-          <div className="price-row">
-            <span>Ticket price</span>
-            <span>₹{price}</span>
-          </div>
-
-          <div className="price-row small">
-            <span>Convenience fees</span>
-            <span>₹{fee}</span>
-          </div>
-
-          <hr />
-
-          <div className="total">
-            <span>Amount Paid</span>
-            <span>₹{total.toFixed(2)}</span>
-          </div>
+          <div>Amount Paid: ₹{total}</div>
         </div>
-
-       
-        <div className="ticket-status">
-          <span className="pickup">Pick Up</span>
-          <div className="stamp">CONFIRMED</div>
-        </div>
-
       </div>
     </div>
   );
 }
+  
