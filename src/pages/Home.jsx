@@ -14,7 +14,7 @@ export default function Home() {
 
           <p>
            Our Event Management Platform makes it easy to explore upcoming events, book tickets securely, and manage your bookings all in one place. From tech conferences and workshops to music nights and festivals, experience seamless event planning with a modern and intuitive interface.
-            track bookings, and stay organized — all designed to deliver a smooth and engaging user experience.
+            .
           </p>
 
           {!isLoggedIn ? (
