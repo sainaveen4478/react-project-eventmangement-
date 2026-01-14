@@ -48,10 +48,7 @@ localStorage.setItem("bookings", JSON.stringify(bookings));
 
 
     const user = JSON.parse(localStorage.getItem("loggedInUser"));
-if (!user) {
-  alert("Please login to book tickets");
-  return;
-}
+
 
 
 
