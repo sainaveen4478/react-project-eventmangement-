@@ -9,7 +9,7 @@ export default function Home() {
       <div className="overlay">
         <div className="content">
           <h1>
-            Eventtify <span></span>
+            EVENTS MANAGING <span></span>
           </h1>
 
           <p>

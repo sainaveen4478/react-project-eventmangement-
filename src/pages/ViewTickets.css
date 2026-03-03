@@ -1,6 +1,6 @@
 .ticket-wrapper {
   width: 100vw;
-  height: 100vh;               
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
 .bms-ticket {
   display: flex;
   width: 900px;
-  background: white;
+  background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   overflow: hidden;
@@ -29,6 +29,26 @@
 .ticket-info {
   flex: 1;
   padding: 25px;
+  color: #222;              /* 🔥 Important */
+}
+
+.ticket-info h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #111;
+}
+
+.ticket-info p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.ticket-info div {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
 }
 
 .ticket-status {
@@ -38,6 +58,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #fafafa;
 }
 
 .stamp {
@@ -52,4 +73,6 @@
 .no-ticket {
   text-align: center;
   margin-top: 50px;
+  font-size: 20px;
+  color: #444;
 }

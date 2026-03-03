@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { events } from "../data/events";
+import { events } from "../data/events.js";
 import "./Events.css";
 
 export default function Events() {
